@@ -114,7 +114,10 @@ mandatory_tags = [
 tags_validated = validate_attribute_contains_list("aws_instance",
                  "tags", mandatory_tags)
 
-#Main rule
+is_sunny     = rule { weather is "sunny" }
+is_wednesday = rule { day is "wednesday" }
+
 main = rule {
-  
+    is_sunny and
+    is_wednesday
 }
